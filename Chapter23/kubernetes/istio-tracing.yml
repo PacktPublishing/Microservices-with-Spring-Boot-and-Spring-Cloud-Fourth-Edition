@@ -1,0 +1,12 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  meshConfig:
+    enableTracing: true
+    defaultConfig:
+      tracing: {} # disable legacy MeshConfig tracing options
+    extensionProviders:
+    - name: "zipkin"
+      zipkin:
+        service: zipkin.istio-system.svc.cluster.local
+        port: 9411

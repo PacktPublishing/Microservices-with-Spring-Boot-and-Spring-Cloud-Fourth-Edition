@@ -1,0 +1,18 @@
+server.port: 7001
+server.error.include-message: always
+
+app:
+  product-service:
+    host: localhost
+    port: 7002
+  recommendation-service:
+    host: localhost
+    port: 7003
+  review-service:
+    host: localhost
+    port: 7004
+
+logging:
+  level:
+    root: INFO
+    se.magnus: DEBUG

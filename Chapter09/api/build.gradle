@@ -1,0 +1,33 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+}
+
+group = 'se.magnus.microservices.api'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(24)
+    }
+}
+
+repositories {
+    mavenCentral(); maven { url = 'https://repo.spring.io/milestone' }
+}
+
+ext {
+    springBootVersion = '3.5.0-RC1'
+}
+
+dependencies {
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springdoc:springdoc-openapi-starter-common:2.8.6'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
