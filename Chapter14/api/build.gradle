@@ -13,11 +13,11 @@ java {
 }
 
 repositories {
-    mavenCentral(); maven { url = 'https://repo.spring.io/milestone' }
+    mavenCentral()
 }
 
 ext {
-    springBootVersion = '3.5.0-RC1'
+    springBootVersion = '3.5.0'
 }
 
 dependencies {
