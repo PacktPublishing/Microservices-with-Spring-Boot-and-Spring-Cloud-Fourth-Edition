@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.messaging.Message;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Hooks;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
@@ -26,7 +27,7 @@ import se.magnus.api.event.Event;
 
 @SpringBootApplication
 @ComponentScan("se.magnus")
-@RegisterReflectionForBinding({ Event.class, ZonedDateTimeSerializer.class, Product.class, Recommendation.class, Review.class, Message.class})
+@RegisterReflectionForBinding({ Event.class, ZonedDateTimeSerializer.class, Product.class, Recommendation.class, Review.class, Message.class, WebClientResponseException.InternalServerError.class})
 public class ProductCompositeServiceApplication {
 
   private static final Logger LOG = LoggerFactory.getLogger(ProductCompositeServiceApplication.class);
