@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: recommendation-service
+
+server:
+  port: 7002
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

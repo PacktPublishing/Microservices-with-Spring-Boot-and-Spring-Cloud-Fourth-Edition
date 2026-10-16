@@ -52,11 +52,13 @@ Default modern-feature work to `product-hub/` once it exists, unless a book chap
 
 | Category | Choice |
 |----------|--------|
-| Runtime / framework | **Spring Boot** |
+| Runtime / framework | **Spring Boot 4.1.x** (Spring Framework 7) |
 | Web | **Spring MVC** (`starter-web`) — **not** WebFlux |
-| Language | Java (align with book samples initially, e.g. 24, unless changed at scaffold) |
+| Language | **Java 25 LTS** (Gradle toolchain) |
 | Base package | **`com.minhhung.producthub.*`** |
-| Build | Gradle multi-module (service modules only) |
+| Build | Gradle multi-module, **Kotlin DSL** (service modules only) |
+| Scaffolding | Spring Boot CLI `spring init` |
+| Spring Cloud | 2025.1.x BOM (OpenFeign) |
 | HTTP between services | **OpenFeign** |
 | Public entry (early) | **Composite as BFF** (no gateway required locally) |
 | API gateway (later) | **Kong** — optional locally; important for prod-like edge |
@@ -241,3 +243,4 @@ Detail for each phase can live under `context/features/` when implementation sta
 | 2026-09-11 | Rename/align docs: `project-overview.md` + context README pattern |
 | 2026-09-11 | No shared common/api modules — service modules only; DDD packages; entity equals/hashCode via business keys |
 | 2026-09-11 | Project name: `product-hub`; base package: `com.minhhung.producthub.*` |
+| 2026-09-27 | Scaffold with Spring Boot CLI; Spring Boot 4.1.1 (Initializr no longer offers 3.5.x); Java 25 LTS; Gradle Kotlin DSL |

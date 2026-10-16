@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: review-service
+
+server:
+  port: 7003
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

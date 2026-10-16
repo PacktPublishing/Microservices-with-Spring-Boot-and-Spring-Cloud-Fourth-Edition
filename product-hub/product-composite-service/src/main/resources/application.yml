@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: product-composite-service
+
+server:
+  port: 7000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
